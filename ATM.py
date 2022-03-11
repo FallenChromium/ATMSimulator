@@ -1,35 +1,8 @@
-import enum
 import random
 import string
 
-#Custom exceptions
-class IncorrectPINException(Exception):
+from resources import *
 
-    def __str__(self):
-        return "Incorrect PIN. Valid PIN: 4 digits"
-
-class BankAccountNotFoundException(Exception):
-
-    def __str__(self):
-        return "Bank account cannot be found"
-
-class IncorrectAmountValueException(Exception):
-
-    def __str__(self):
-        return "Nope. You can't use THAT as money amount"
-
-class NotEnoughFundsException(Exception):
-
-    def __str__(self):
-        #this is a Starcraft reference
-        return "Not enough minerals"
-
-class CardIsLockedException(Exception):
-
-    def __str__(self):
-        #this is a Starcraft reference
-        return "Sorry, your card is locked. Visit the nearest bank office for assistance!" 
-        
 #Utilities
 def validatePIN(pin:str):
     if(len(pin) != 4): 
@@ -41,15 +14,6 @@ def validatePIN(pin:str):
 def validateAmount(amount:int):
     if(amount < 0 or not isinstance(amount, int)):
         raise IncorrectAmountValueException
-
-
-class BanknoteTypes(enum.IntEnum):
-    BYN5 = 5
-    BYN10 = 10
-    BYN20 = 20
-    BYN50 = 50
-    BYN100 = 100
-    BYN200 = 200
 
 
 class BankAccount:
