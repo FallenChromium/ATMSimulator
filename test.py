@@ -60,7 +60,7 @@ class TestBank(unittest.TestCase):
         self.bank = ATM.Bank("CapitalistHive L.L.C.", self.accounts) 
         accountId: str = list(self.accounts.keys())[0] 
         #should throw NotEnoughFunds
-        with self.assertRaises(ATM.NotEnoughFunds):
+        with self.assertRaises(ATM.NotEnoughFundsException):
             self.bank.withdrawFromAccount(accountId, 300)
         
     def testWithdraw(self):

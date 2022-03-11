@@ -8,21 +8,27 @@ class IncorrectPINException(Exception):
     def __str__(self):
         return "Incorrect PIN. Valid PIN: 4 digits"
 
-class BankAccountNotFound(Exception):
+class BankAccountNotFoundException(Exception):
 
     def __str__(self):
         return "Bank account cannot be found"
 
-class IncorrectMoneyAmountValue(Exception):
+class IncorrectAmountValueException(Exception):
 
     def __str__(self):
         return "Nope. You can't use THAT as money amount"
 
-class NotEnoughFunds(Exception):
+class NotEnoughFundsException(Exception):
 
     def __str__(self):
         #this is a Starcraft reference
         return "Not enough minerals"
+
+class CardIsLockedException(Exception):
+
+    def __str__(self):
+        #this is a Starcraft reference
+        return "Sorry, your card is locked. Visit the nearest bank office for assistance!" 
         
 #Utilities
 def validatePIN(pin:str):
@@ -34,7 +40,7 @@ def validatePIN(pin:str):
 
 def validateAmount(amount:int):
     if(amount < 0 or not isinstance(amount, int)):
-        raise IncorrectMoneyAmountValue
+        raise IncorrectAmountValueException
 
 
 class BanknoteTypes(enum.IntEnum):
@@ -58,7 +64,7 @@ class BankAccount:
         self._balance += amount
 
     def withdraw(self, amount):
-        if self._balance - amount < 0: raise NotEnoughFunds
+        if self._balance - amount < 0: raise NotEnoughFundsException
         else: self._balance -= amount
 
     def getBalance(self):
@@ -85,7 +91,7 @@ class Bank:
 
     def getAccountBalance(self, account_id:str):
         if not isinstance(self._accounts[account_id], BankAccount):
-            raise BankAccountNotFound
+            raise BankAccountNotFoundException
         else: return self._accounts[account_id].getBalance()
 
     def replenishAccount(self, account_id:str, amount:int):
@@ -112,7 +118,7 @@ class Card:
         self._pin = "".join([random.choice(string.digits) for x in range(4)])
         
     def unlockCard(self,pin: str):
-        if self._incorrectTries > 3: return False
+        if self._incorrectTries > 3: raise CardIsLockedException
 
         validatePIN(pin)
         if self._pin == pin: return True
