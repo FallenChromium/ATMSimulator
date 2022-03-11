@@ -13,6 +13,17 @@ class BankAccountNotFound(Exception):
     def __str__(self):
         return "Bank account cannot be found"
 
+class IncorrectMoneyAmountValue(Exception):
+
+    def __str__(self):
+        return "Nope. You can't use THAT as money amount"
+
+class NotEnoughFunds(Exception):
+
+    def __str__(self):
+        #this is a Starcraft reference
+        return "Not enough minerals"
+        
 #Utilities
 def validatePIN(pin:str):
     if(len(pin) != 4): 
@@ -20,6 +31,10 @@ def validatePIN(pin:str):
     for char in pin:
         if char not in string.digits:
             raise IncorrectPINException
+
+def validateAmount(amount:int):
+    if(amount < 0 or not isinstance(amount, int)):
+        raise IncorrectMoneyAmountValue
 
 
 class BanknoteTypes(enum.IntEnum):
@@ -43,7 +58,8 @@ class BankAccount:
         self._balance += amount
 
     def withdraw(self, amount):
-        self._balance -= amount
+        if self._balance - amount < 0: raise NotEnoughFunds
+        else: self._balance -= amount
 
     def getBalance(self):
         return self._balance
@@ -71,6 +87,12 @@ class Bank:
         if not isinstance(self._accounts[account_id], BankAccount):
             raise BankAccountNotFound
         else: return self._accounts[account_id].getBalance()
+
+    def replenishAccount(self, account_id:str, amount:int):
+        self._accounts[account_id].replenish(amount)
+
+    def withdrawFromAccount(self, account_id:str, amount:int):
+        self._accounts[account_id].withdraw(amount)
 
 class Card:
     _emitent: str

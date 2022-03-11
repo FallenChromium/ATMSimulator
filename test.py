@@ -44,13 +44,34 @@ class TestBank(unittest.TestCase):
             "bankaccount3": ATM.BankAccount("Bob Marley")
         }
 
-        bank = ATM.Bank("CapitalistHive L.L.C.", accounts)
-        self.assertTrue(bank.getName() == "CapitalistHive L.L.C.")
+        self.bank = ATM.Bank("CapitalistHive L.L.C.", accounts)
+        self.assertTrue(self.bank.getName() == "CapitalistHive L.L.C.")
         # Should be zero, because we've just created the account and didn't replenish it
         self.assertTrue(
             # get ID of a first account in a dict
-            bank.getAccountBalance(list(accounts.keys())[0]) == 0
+            self.bank.getAccountBalance(list(accounts.keys())[0]) == 0
         )
+
+    def testReplenish(self):
+        self.accounts: dict[str, ATM.BankAccount] = {
+            "bankaccount1": ATM.BankAccount("John Doe")
+        }
+
+        self.bank = ATM.Bank("CapitalistHive L.L.C.", self.accounts) 
+        accountId: str = list(self.accounts.keys())[0] 
+        #should throw NotEnoughFunds
+        with self.assertRaises(ATM.NotEnoughFunds):
+            self.bank.withdrawFromAccount(accountId, 300)
+        
+    def testWithdraw(self):
+        self.accounts: dict[str, ATM.BankAccount] = {
+            "bankaccount1": ATM.BankAccount("John Doe")
+        }
+
+        self.bank = ATM.Bank("CapitalistHive L.L.C.", self.accounts) 
+        accountId: str = list(self.accounts.keys())[0]  
+        self.bank.replenishAccount(accountId, 300)
+        self.assertTrue(self.bank.getAccountBalance(accountId) == 300)
 
 if __name__ == '__main__':
     unittest.main()
