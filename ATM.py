@@ -8,6 +8,11 @@ class IncorrectPINException(Exception):
     def __str__(self):
         return "Incorrect PIN. Valid PIN: 4 digits"
 
+class BankAccountNotFound(Exception):
+
+    def __str__(self):
+        return "Bank account cannot be found"
+
 #Utilities
 def validatePIN(pin:str):
     if(len(pin) != 4): 
@@ -42,26 +47,30 @@ class BankAccount:
 
     def getBalance(self):
         return self._balance
+    
+    def getOwner(self):
+        return self._owner
 
 class Bank:
     _name: str
-    _balance: int = 0
     #Uses card number as key
-    _accounts: list[BankAccount]
+    _accounts: dict[str, BankAccount]
 
-    def __init__(self, name, balance, accounts):
+    def __init__(self, name, accounts: dict[str, BankAccount]):
         self._name = name
-        self._balance = balance
         self._accounts = accounts
 
     def getName(self):
         return self._name
     
-    
-
     def createAccount(self, owner):
         ##TODO: validation
         return BankAccount(owner)
+
+    def getAccountBalance(self, account_id:str):
+        if not isinstance(self._accounts[account_id], BankAccount):
+            raise BankAccountNotFound
+        else: return self._accounts[account_id].getBalance()
 
 class Card:
     _emitent: str
