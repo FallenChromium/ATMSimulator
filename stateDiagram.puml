@@ -4,7 +4,7 @@ FilesLoaded --> [*]: Incorrect data
 FilesLoaded --> WaitingForCard: ask user to insert a card
 
 WaitingForCard: choose a card
-WaitingForCard --> [*]: exit is chosen
+WaitingForCard --> [*]: Ctrl+C (walk away)
 WaitingForCard --> WaitingForPIN: correct card is chosen
 WaitingForPIN: enter PIN
 WaitingForPIN --> WaitingForPIN: pin is incorrect
@@ -23,17 +23,14 @@ PhoneRefill: enter phone number
 PhoneRefill --> PhoneRefill: incorrect phone number
 PhoneRefill --> PhoneRefillSum: correct number
 PhoneRefillSum --> PhoneRefillSum: insufficent balance
-PhoneRefillSum --> OperationDone: success
+PhoneRefillSum --> MainMenu: success
 
-OperationDone -> [*]: exit is chosen
-OperationDone -> WaitingForPIN: another operation is chosen
-
-ShowBalance -> OperationDone: click "OK"
+ShowBalance -> MainMenu: click "OK"
 
 Withdrawal: enter sum to withdraw
 Withdrawal --> Withdrawal: insufficent balance
 Withdrawal --> Withdrawal: unable to provide sum in cash
-Withdrawal --> OperationDone: withdraw from balance, provide cash
+Withdrawal --> MainMenu: withdraw from balance, provide cash
 
 Withdrawal --> MainMenu: "back" is chosen
 PhoneRefill --> MainMenu: "back" is chosen
