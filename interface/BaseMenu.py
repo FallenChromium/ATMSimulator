@@ -3,8 +3,6 @@ from typing import Callable
 from rich.console import Console
 from rich.prompt import Prompt
 from rich.table import Table
-import types
-
 
 class BaseMenu(abc.ABC):
     # int -> button in the interface; function -> action called; str -> description of the action.
@@ -26,3 +24,8 @@ class BaseMenu(abc.ABC):
         for key, value in self.__actions.items():
             table.add_row(str(key), value[1])
         console.print(table)
+        choice = Prompt.ask(
+            "What do you want to do?", choices=[x for x in self.__actions.keys()]
+        )
+        self.__actions[choice][0]()
+
