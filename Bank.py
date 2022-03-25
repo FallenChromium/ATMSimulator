@@ -39,15 +39,15 @@ class Card:
     __incorrectTries: int = 0
     _blocked: bool
 
-    def __init__(self, bankname: str):
+    def __init__(self, bankname: str, bankAccountId: str, cardNumber: str = generateCardNumber(), pin: str = generatePIN()):
         # A card emitting operation. Should of course be more complicated, but it's a model after all
         self._emitent = bankname
         # generate a random number
-        self._cardNumber = generateCardNumber()
+        self._cardNumber = cardNumber
         # generate a random PIN
-        self.__pin = generatePIN()
+        self.__pin = pin
         # Generate a random bank account ID
-        self.__bankAccountId = generateBankAccountId()
+        self.__bankAccountId = bankAccountId
 
     def getBankAccountId(self):
         return self.__bankAccountId
