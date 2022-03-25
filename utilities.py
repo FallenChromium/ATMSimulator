@@ -18,3 +18,6 @@ def generatePIN() -> str:
 
 def generateCardNumber() -> str:
     return "".join([random.choice(string.digits) for x in range(16)])
+
+def generateBankAccountId() -> str:
+    return "".join([random.choice(string.digits) for x in range(25)])
