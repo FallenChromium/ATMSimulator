@@ -1,0 +1,45 @@
+{
+  "banks": [{
+      "name": "CapitalistHive L.L.C",
+      "accounts": [
+        {
+          "owner": "FallenChromium",
+          "id": "0012357915",
+          "balance": 1337
+        },
+        {
+          "owner": "El Burrito",
+          "id": "0987654321",
+          "balance": 300
+        }
+      ]
+    }],
+  "cards": [{
+        "emitent": "CapitalistHive L.L.C",
+        "cardNumber": "5578843370548293",
+        "pin": "1234",
+        "bankAccountId": "0012357915",
+        "blocked": false,
+        "incorrectTries": 0
+      },
+      {
+        "emitent": "CapitalistHive L.L.C",
+        "cardNumber": "5578843370548294",
+        "pin": "1235",
+        "bankAccountId": "0012357915",
+        "blocked": false,
+        "incorrectTries": 0
+      },
+      {
+        "emitent": "CapitalistHive L.L.C",
+        "cardNumber": "5578843370548295",
+        "pin": "1237",
+        "bankAccountId": "0987654321",
+        "blocked": false,
+        "incorrectTries": 2
+      }
+    ],
+  "ATM": {
+      "cash_vault": {"5": 25, "10": 20, "50": 30, "100": 20} 
+  }
+}
