@@ -1,6 +1,6 @@
 import random
 import string
-from resources import IncorrectPINException, IncorrectAmountValueException
+from resources import IncorrectPINException, IncorrectAmountValueException, IncorrectPhoneNumberException
 
 def validatePIN(pin:str):
     if(len(pin) != 4): 
@@ -12,6 +12,10 @@ def validatePIN(pin:str):
 def validateAmount(amount:int):
     if(amount < 0 or not isinstance(amount, int)):
         raise IncorrectAmountValueException
+
+def validatePhone(phone:str):
+    if(len(phone) != 9):
+        raise IncorrectPhoneNumberException 
 
 def generatePIN() -> str:
     return "".join([random.choice(string.digits) for x in range(4)])

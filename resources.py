@@ -18,6 +18,10 @@ class IncorrectAmountValueException(Exception):
     def __str__(self):
         return "Nope. You can't use THAT as money amount"
 
+class IncorrectPhoneNumberException(Exception):
+
+    def __str__(self):
+        return "Your phone number is incorrect. Try again!"
 
 class NotEnoughFundsException(Exception):
 
