@@ -1,3 +1,4 @@
+from interface.AmountDialogue import amountDialogue
 from interface.BaseMenu import BaseMenu
 from rich.prompt import IntPrompt
 from interface.ConfirmDialogue import confirmDialogue
@@ -8,16 +9,10 @@ import settings
 
 class WithdrawalMenu(BaseMenu):
     def show(self):
-        while True:
-            choice = IntPrompt.ask(
-                "Enter the amount you want to withdraw (0 to go back)")
+            choice = amountDialogue("How much do you want to withdraw? 0 for exit")
+            can_give = settings.atm.calculateWithdraw(choice)
             if (choice == 0): return
-            try:
-                utilities.validateAmount(choice)
-            except IncorrectAmountValueException:
-                print("Duh, incorrect amount")
             else:
-                can_give = settings.atm.calculateWithdraw(choice)
                 if(confirmDialogue("Best we can do for you is " + str(can_give) + ". Is that alright?")):
                     try:
                         settings.atm.bank.withdrawFromAccount(
