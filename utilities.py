@@ -9,8 +9,8 @@ def validatePIN(pin:str):
         if char not in string.digits:
             raise IncorrectPINException
 
-def validateAmount(amount:int):
-    if(amount < 0 or not isinstance(amount, int)):
+def validateAmount(amount:float):
+    if(amount < 0):
         raise IncorrectAmountValueException
 
 def validatePhone(phone:str):
