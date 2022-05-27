@@ -118,6 +118,8 @@ class CLIView(IView):
             print(error)
         except IncorrectAmountValueException as error:
             print(error)
+        except NotEnoughFundsException as error:
+            print(error)
         # conversion error
         except ValueError:
             print(IncorrectAmountValueException())

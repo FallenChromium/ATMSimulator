@@ -6,7 +6,7 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.label import MDLabel
 from kivymd.uix.dialog import MDDialog
 from kivy.properties import ObjectProperty
-from resources import CardIsLockedException, IncorrectPINException, IncorrectPhoneNumberException, InvalidPINException
+from resources import CardIsLockedException, IncorrectAmountValueException, IncorrectPINException, IncorrectPhoneNumberException, InvalidPINException, NotEnoughFundsException
 import settings
 from utilities import validatePhone
 
@@ -154,10 +154,16 @@ class GUIView(IView):
             self.surf.add_widget(Keyboard(proceed=lambda x: self.makePayment(phone,x), cancel = self.mainMenu, text="Enter topup amount"))
 
     def makePayment(self, phone, amount):
-        self.controller.phoneTopup(phone, amount)
-        self.surf.clear_widgets()
-        self.surf.add_widget(MDLabel(text='Done'))
-        self.surf.add_widget(MDFlatButton(text='Back', on_press=self.mainMenu, size_hint=(1, 0.1)))
+        try:
+            self.controller.phoneTopup(phone, amount)
+        except NotEnoughFundsException as e:
+            ErrorPopup(e.__str__()).open()
+        except IncorrectAmountValueException as e:
+            ErrorPopup(e.__str__()).open()
+        else:
+            self.surf.clear_widgets()
+            self.surf.add_widget(MDLabel(text='Done'))
+            self.surf.add_widget(MDFlatButton(text='Back', on_press=self.mainMenu, size_hint=(1, 0.1)))
 
 
 class Keyboard(MDBoxLayout):
