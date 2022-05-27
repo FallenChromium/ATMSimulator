@@ -41,6 +41,17 @@ class CardIsLockedException(Exception):
         # this is a Starcraft reference
         return "Sorry, your card is locked. Visit the nearest bank office for assistance!"
 
+class AuthenticationRequiredException(Exception):
+
+    def __str__(self):
+        # this is a Starcraft reference
+        return "Sorry, but you didn't log in. This operation requires you to authenticate!"
+
+class BankIsUnsupportedException(Exception):
+
+    def __str__(self):
+        return "We are not connected to this bank's database. Please try a different ATM."
+
 
 class ReadError(Exception):
     def __str__(self):

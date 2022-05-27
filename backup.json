@@ -49,13 +49,7 @@
             "50": 7,
             "100": 30
         },
-        "card": {
-            "emitent": "CapitalistHive L.L.C",
-            "bankAccountId": "0012357915",
-            "cardNumber": "5578843370548293",
-            "pin": "1234",
-            "incorrectTries": 0,
-            "blocked": false
-        }
+        "bankname": null,
+        "accountId": null
     }
 }

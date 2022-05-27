@@ -1,6 +1,7 @@
 from model.Bank import Card
 from resources import BanknoteTypes
 from typing import Union
+from resources import BankIsUnsupportedException
 import settings
 
 
@@ -29,21 +30,22 @@ class ATM:
     _vault: CashVault
 
     def __serialize__(self):
-        return {'cash_vault': self._vault, 'card': self._card}
+        return {'cash_vault': self._vault, 'bankname': self._bankname, 'accountId': self._accountId}
 
 
-    def __init__(self, cash_vault: CashVault, card):
+    def __init__(self, cash_vault: CashVault, bankname: Union[str, None] = None, accountId: Union[str, None] = None):
         self._vault = cash_vault
-        self._card = card
+        self._bankname = bankname
+        self._accountId = accountId
 
     def authenticate(self, card_index):
-        self._card = settings.cards[card_index]
-        bankname = self._card._emitent
-        self.bank = next(
-            (bank for bank in settings.banks if bank.name == bankname))
+        card = settings.cards[card_index]
+        self._bankname = card._emitent
+        self._accountId = card.getBankAccountId()
 
     def logout(self):
-        self._card = None
+        self._bankname = None
+        self._accountId = None
     
     def calculateWithdraw(self, amount: float) -> float:
         can_give = 0
@@ -59,10 +61,13 @@ class ATM:
         return can_give
 
     def getBank(self):
-        return next(bank for bank in settings.banks if bank.name == self._card._emitent)
+        bank = next((bank for bank in settings.banks if bank.name == self._bankname), None) 
+        if bank is not None:
+            return bank
+        else: raise(BankIsUnsupportedException)
     
     def getAccountId(self):
-        return self._card.getBankAccountId()
+        return self._accountId
 
     # call this only after verifying that the money is successfully subtracted from the account!
     def withdraw(self, amount: float) -> list[str]:
@@ -79,6 +84,4 @@ class ATM:
         return cash
     
     def isCardInserted(self):
-        return self._card is not None
-
-        return cash
+        return self._accountId is not None

@@ -86,11 +86,7 @@ def loadATM(obj):
         cash_vault = CashVault(
             {int(key): value for key, value in obj['ATM']["cash_vault"].items()}
         )
-        card = obj['ATM']["card"]
-        card_obj = Card(card['emitent'], card['bankAccountId'], card['cardNumber'],
-                         card['pin'], card['incorrectTries'], card['blocked']) if card is not None else None
-
-        atm: ATM = ATM(cash_vault, card_obj)
+        atm: ATM = ATM(cash_vault, obj["ATM"]["bankname"], obj["ATM"]["accountId"])
         return atm
     else:
         raise(ReadError)
