@@ -1,8 +1,7 @@
 from model.ATM import ATM
-from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardNotFoundException
+from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardNotFoundException, IncorrectPINException
 import settings
-from utilities import validatePIN, validatePhone
-from view.CLIView import CLIView
+from utilities import validateAmount, validatePIN, validatePhone
 
 class ATMController:
 
@@ -14,7 +13,7 @@ class ATMController:
         def wrapper_func(*args):
             # args[0] here is the "self" in the called function
             if args[0].atm.isCardInserted():
-                function(*args, args[0].atm.getAccountId())
+                return function(*args, lambda self=args[0]: self.atm.getAccountId())
             else: raise(AuthenticationRequiredException)
         return wrapper_func
 
@@ -23,53 +22,60 @@ class ATMController:
 
     def startUI(self, variation: str):
         if variation == "gui":
-            pass
+            from view.GUIView import GUIView
+            self.view = GUIView(self)
         if variation == "cli":
+            from view.CLIView import CLIView
             self.view = CLIView(self)
         self.view.atm()
 
     def logout(self):
         self.atm.logout()
 
-    def login(self, card_index: int):
+    def loginGuard(self, card_index: int):
         if self.isCardInserted():
             raise CardAlreadyInsertedException
-        # if ther's no card like this (as per EAFP codestyle)
+        # if there's no card like this (as per EAFP codestyle)
         try:
             settings.cards[card_index]
         except IndexError:
             raise CardNotFoundException
-        while True:
-            pin = self.view.enterPin()
+
+    def login(self, card_index: int, pin: str):
             validatePIN(pin)
             if settings.cards[card_index].unlockCard(pin):
                 self.atm.authenticate(card_index)
-                break
+            else: 
+                raise IncorrectPINException
 
     @requires_auth
-    def getCardBalance(self,accountId: str) -> float:
-        return self.atm.getBank().getAccountBalance(accountId)
+    def getBalance(self,accountId) -> float:
+        return self.atm.getBank().getAccountBalance(accountId())
 
     @requires_auth
-    def phoneTopup(self, phone: str, amount: float, accountId: str):
+    def phoneTopup(self, phone: str, amount: float, accountId):
         validatePhone(phone)
-        self.atm.getBank().withdrawFromAccount(accountId, amount)
+        amount = float(amount)
+        validateAmount(amount)
+        self.atm.getBank().withdrawFromAccount(accountId(), amount)
         # We are supposed to top up a phone, but why would we simulate any? 
         # It's an ATM simulator, not a mobile carrier simulator...
 
     @requires_auth
-    def withdraw(self, amount: float, accountId: str) -> list[str]:
+    def withdrawConfirmation(self, amount: float, accountId):
+        amount = float(amount)
+        validateAmount(amount)
         real_amount = self.atm.calculateWithdraw(amount)
-        if real_amount == amount:
-            self.atm.getBank().withdrawFromAccount(accountId, amount)
-            return self.atm.withdraw(amount)
-        else:
-            if self.view.confirmation("Best we can do is " + str(real_amount) + ", is that okay?"):
-                self.atm.getBank().withdrawFromAccount(accountId, real_amount)
-                return self.atm.withdraw(real_amount)
-            # else (if the possible sum is not okay) - do nothing
-            else: 
-                return []
+        if real_amount != amount:
+            self.view.withdrawConfirmation("Best we can do is " + str(real_amount) + ", is that okay?", real_amount)
+        else: self.view.withdrawConfirmation("You are about to withdraw: " + str(amount) + ". Do you want to continue?", amount)
+
+    @requires_auth
+    def withdraw(self, amount: float, accountId) -> list[str]:
+            self.atm.getBank().withdrawFromAccount(accountId(), amount)
+            cash = self.atm.withdraw(amount)
+            return(cash)
+
 
     def isCardInserted(self) -> bool:
         return self.atm.isCardInserted()

@@ -17,5 +17,5 @@ if __name__ == "__main__":
         
     # initialize controller
     controller = ATMController(atm)
-    controller.startUI("cli")
+    controller.startUI("gui")
     

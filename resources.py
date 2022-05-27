@@ -1,9 +1,15 @@
 import enum
 
+class InvalidPINException(Exception):
+
+    def __str__(self):
+        return "Invalid PIN. Valid PIN: 4 digits"
+
+
 class IncorrectPINException(Exception):
 
     def __str__(self):
-        return "Incorrect PIN. Valid PIN: 4 digits"
+        return "Your PIN is incorrect. Try again!"
 
 
 class CardAlreadyInsertedException(Exception):

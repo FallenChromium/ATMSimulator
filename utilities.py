@@ -1,13 +1,13 @@
 import random
 import string
-from resources import IncorrectPINException, IncorrectAmountValueException, IncorrectPhoneNumberException
+from resources import InvalidPINException, IncorrectAmountValueException, IncorrectPhoneNumberException
 
 def validatePIN(pin:str):
     if(len(pin) != 4): 
-        raise IncorrectPINException
+        raise InvalidPINException
     for char in pin:
         if char not in string.digits:
-            raise IncorrectPINException
+            raise InvalidPINException
 
 def validateAmount(amount:float):
     if(amount < 0):

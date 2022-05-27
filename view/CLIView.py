@@ -1,6 +1,6 @@
 from utilities import validatePIN
 from view.IView import IView
-from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardIsLockedException, CardNotFoundException, IncorrectAmountValueException, IncorrectPINException, IncorrectPhoneNumberException, NotEnoughFundsException
+from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardIsLockedException, CardNotFoundException, IncorrectAmountValueException, IncorrectPINException, InvalidPINException, IncorrectPhoneNumberException, NotEnoughFundsException
 import settings
 # For some sweet UI elements
 from rich.console import Console
@@ -33,13 +33,19 @@ class CLIView(IView):
     # there should be proper error handling, but it kinda doesn't matter in the CLI app, does it?
     def login(card):
         try:
-            cli_controller.login(card)
+            cli_controller.loginGuard(card)
         except CardAlreadyInsertedException as e:
-            print(e)
-        except CardIsLockedException as e:
             print(e)
         except CardNotFoundException as e:
             print(e)
+        else:
+            try:
+                cli_controller.login(card, CLIView.enterPin())
+            except CardIsLockedException as e:
+                print(e)
+                quit()
+            except IncorrectPINException as e:
+                print(e)
 
     @atm.command('cards')
     @staticmethod
@@ -64,7 +70,7 @@ class CLIView(IView):
             # Validate PIN first
             try:
                 validatePIN(pin)
-            except IncorrectPINException:
+            except InvalidPINException:
                 print("Invalid input!")
                 continue
             
@@ -74,7 +80,7 @@ class CLIView(IView):
     @staticmethod
     def show_balance():
         try:
-            print(cli_controller.getCardBalance())
+            print(cli_controller.getBalance())
         except AuthenticationRequiredException as error:
             print(error)
 
@@ -83,17 +89,23 @@ class CLIView(IView):
     @staticmethod
     def withdraw(amount):
         try:
-            cash = cli_controller.withdraw(float(amount))
+            cli_controller.withdrawConfirmation(amount)            
         except NotEnoughFundsException as error:
             print(error)
         except AuthenticationRequiredException as error:
             print(error)
-        else:
-            for banknote in cash:
-                print(banknote)
+
+    @staticmethod
+    def withdrawSummary(amount):
+        cash = cli_controller.withdraw(amount)
+        for banknote in cash:
+            print(banknote)
     
-    def confirmation(self, dialog_text: str):
-        return click.confirm(dialog_text)
+    def withdrawConfirmation(self, dialog_text: str, amount: float):
+        if click.confirm(dialog_text):
+            CLIView.withdrawSummary(amount)
+
+
 
     @atm.command('phone_topup')
     @click.argument('phone')
