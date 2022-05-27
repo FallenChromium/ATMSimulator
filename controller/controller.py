@@ -1,5 +1,5 @@
 from model.ATM import ATM
-from resources import AuthenticationRequiredException, CardAlreadyInsertedException
+from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardNotFoundException
 import settings
 from utilities import validatePIN, validatePhone
 from view.CLIView import CLIView
@@ -34,6 +34,11 @@ class ATMController:
     def login(self, card_index: int):
         if self.isCardInserted():
             raise CardAlreadyInsertedException
+        # if ther's no card like this (as per EAFP codestyle)
+        try:
+            settings.cards[card_index]
+        except IndexError:
+            raise CardNotFoundException
         while True:
             pin = self.view.enterPin()
             validatePIN(pin)

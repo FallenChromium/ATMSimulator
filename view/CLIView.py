@@ -1,6 +1,6 @@
 from utilities import validatePIN
 from view.IView import IView
-from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardIsLockedException, IncorrectAmountValueException, IncorrectPINException, IncorrectPhoneNumberException, NotEnoughFundsException
+from resources import AuthenticationRequiredException, CardAlreadyInsertedException, CardIsLockedException, CardNotFoundException, IncorrectAmountValueException, IncorrectPINException, IncorrectPhoneNumberException, NotEnoughFundsException
 import settings
 # For some sweet UI elements
 from rich.console import Console
@@ -30,12 +30,15 @@ class CLIView(IView):
     @atm.command('insert')
     @click.argument('card', type=click.INT)
     @staticmethod
+    # there should be proper error handling, but it kinda doesn't matter in the CLI app, does it?
     def login(card):
         try:
             cli_controller.login(card)
         except CardAlreadyInsertedException as e:
             print(e)
         except CardIsLockedException as e:
+            print(e)
+        except CardNotFoundException as e:
             print(e)
 
     @atm.command('cards')
@@ -106,4 +109,6 @@ class CLIView(IView):
         # conversion error
         except ValueError:
             print(IncorrectAmountValueException())
+        except AuthenticationRequiredException as error:
+            print(error)
 

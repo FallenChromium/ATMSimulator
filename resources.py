@@ -41,6 +41,12 @@ class CardIsLockedException(Exception):
         # this is a Starcraft reference
         return "Sorry, your card is locked. Visit the nearest bank office for assistance!"
 
+class CardNotFoundException(Exception):
+
+    def __str__(self):
+        # another meme reference
+        return "This card doesn't exist. I can't believe you've done this."
+
 class AuthenticationRequiredException(Exception):
 
     def __str__(self):
