@@ -17,19 +17,19 @@ class CLIView(IView):
         global cli_controller
         cli_controller = controller
 
-    @click.group()
     @staticmethod
+    @click.group()
     def atm():
         pass
-
-    @atm.command('logout')
+    
     @staticmethod
+    @atm.command('logout')
     def logout():
         cli_controller.logout()
 
+    @staticmethod
     @atm.command('insert')
     @click.argument('card', type=click.INT)
-    @staticmethod
     # there should be proper error handling, but it kinda doesn't matter in the CLI app, does it?
     def login(card):
         try:
@@ -47,8 +47,8 @@ class CLIView(IView):
             except IncorrectPINException as e:
                 print(e)
 
-    @atm.command('cards')
     @staticmethod
+    @atm.command('cards')
     def show_available_cards():
         console = Console()
         table = Table(show_header=True, header_style="bold cyan")
@@ -76,17 +76,17 @@ class CLIView(IView):
             
             return pin
 
-    @atm.command('show_balance')
     @staticmethod
+    @atm.command('show_balance')
     def show_balance():
         try:
             print(cli_controller.getBalance())
         except AuthenticationRequiredException as error:
             print(error)
 
+    @staticmethod
     @atm.command('withdraw')
     @click.argument('amount')
-    @staticmethod
     def withdraw(amount):
         try:
             cli_controller.withdrawConfirmation(amount)            
@@ -106,11 +106,10 @@ class CLIView(IView):
             CLIView.withdrawSummary(amount)
 
 
-
+    @staticmethod
     @atm.command('phone_topup')
     @click.argument('phone')
     @click.argument('amount')
-    @staticmethod
     def phone_topup(phone, amount):
         try:
             cli_controller.phoneTopup(phone, float(amount))

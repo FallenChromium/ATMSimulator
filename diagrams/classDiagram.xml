@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+<!DOCTYPE graph PUBLIC "-//John Punin//DTD graph description//EN" "http://www.cs.rpi.edu/~puninj/XGMML/xgmml.dtd">
+
+    <graph directed="1" graphic="1" Layout="points">
+
+        <node id="InvalidPINException" label="InvalidPINException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="628.0" y="892.0" h="78" w="180" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="170"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="IncorrectPINException" label="IncorrectPINException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="818.0" y="828.0" h="78" w="196" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="186"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="CardAlreadyInsertedException" label="CardAlreadyInsertedException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="968.0" y="961.0" h="78" w="255" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="245"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="BankAccountNotFoundException" label="BankAccountNotFoundException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="512.0" y="1061.0" h="78" w="255" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="245"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="IncorrectAmountValueException" label="IncorrectAmountValueException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="454.0" y="1136.0" h="78" w="264" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="254"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="IncorrectPhoneNumberException" label="IncorrectPhoneNumberException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="994.0" y="1045.0" h="78" w="264" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="254"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="NotEnoughFundsException" label="NotEnoughFundsException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="904.0" y="890.0" h="78" w="213" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="203"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="CardIsLockedException" label="CardIsLockedException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="562.0" y="974.0" h="78" w="196" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="186"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="CardNotFoundException" label="CardNotFoundException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="711.0" y="759.0" h="78" w="196" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="186"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="AuthenticationRequiredException" label="AuthenticationRequiredException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="979.0" y="1114.0" h="78" w="280" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="270"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="BankIsUnsupportedException" label="BankIsUnsupportedException&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="723.0" y="1136.0" h="78" w="238" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="228"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="ReadError" label="ReadError&#xa;⎯⎯⎯&#xa;__str__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="700.0" y="824.0" h="78" w="96" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__str__"/>
+
+            <att name="width" value="86"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="BanknoteTypes" label="BanknoteTypes&#xa;⎯⎯⎯&#xa;BYN10&#xa;BYN100&#xa;BYN20&#xa;BYN200&#xa;BYN5&#xa;BYN50" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="973.0" y="436.0" h="128" w="129" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="BYN10,BYN100,BYN20,BYN200,BYN5,BYN50"/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="119"/>
+            <att name="height" value="104"/>
+        </node>
+        <node id="Exception" label="Exception" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="793.0" y="1096.0" h="36" w="96" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="86"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="enum.IntEnum" label="enum.IntEnum" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="979.0" y="557.0" h="36" w="121" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="111"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="CashVault" label="CashVault&#xa;⎯⎯⎯&#xa;_availableBanknotes&#xa;⎯⎯⎯&#xa;__init__&#xa;__serialize__&#xa;addBanknote&#xa;checkAvailability&#xa;clearVault&#xa;removeBanknote" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="968.0" y="246.0" h="160" w="134" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="_availableBanknotes"/>
+            <att name="meths" value="__init__,__serialize__,addBanknote,checkAvailability,clearVault,removeBanknote"/>
+
+            <att name="width" value="124"/>
+            <att name="height" value="124"/>
+        </node>
+        <node id="ATM" label="ATM&#xa;⎯⎯⎯&#xa;_accountId&#xa;_bankname&#xa;_card&#xa;_vault&#xa;⎯⎯⎯&#xa;__init__&#xa;__serialize__&#xa;authenticate&#xa;calculateWithdraw&#xa;getAccountId&#xa;getBank&#xa;isCardInserted&#xa;logout&#xa;withdraw" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="975.0" y="15.0" h="220" w="122" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="_accountId,_bankname,_card,_vault"/>
+            <att name="meths" value="__init__,__serialize__,authenticate,calculateWithdraw,getAccountId,getBank,isCardInserted,logout,withdraw"/>
+
+            <att name="width" value="112"/>
+            <att name="height" value="184"/>
+        </node>
+        <node id="BankAccount" label="BankAccount&#xa;⎯⎯⎯&#xa;__balance&#xa;__id&#xa;__owner&#xa;⎯⎯⎯&#xa;__init__&#xa;__serialize__&#xa;getBalance&#xa;getId&#xa;getOwner&#xa;replenish&#xa;withdraw" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1140.0" y="199.0" h="190" w="112" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="__balance,__id,__owner"/>
+            <att name="meths" value="__init__,__serialize__,getBalance,getId,getOwner,replenish,withdraw"/>
+
+            <att name="width" value="102"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="Card" label="Card&#xa;⎯⎯⎯&#xa;__bankAccountId&#xa;__incorrectTries&#xa;__pin&#xa;_blocked&#xa;_cardNumber&#xa;_emitent&#xa;⎯⎯⎯&#xa;__init__&#xa;__serialize__&#xa;getBankAccountId&#xa;unlockCard" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1140.0" y="383.0" h="190" w="116" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="__bankAccountId,__incorrectTries,__pin,_blocked,_cardNumber,_emitent"/>
+            <att name="meths" value="__init__,__serialize__,getBankAccountId,unlockCard"/>
+
+            <att name="width" value="106"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="Bank" label="Bank&#xa;⎯⎯⎯&#xa;__accounts&#xa;name&#xa;⎯⎯⎯&#xa;__init__&#xa;__serialize__&#xa;createAccount&#xa;getAccountBalance&#xa;getName&#xa;replenishAccount&#xa;withdrawFromAccount" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="1129.0" y="16.0" h="180" w="134" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="__accounts,name"/>
+            <att name="meths" value="__init__,__serialize__,createAccount,getAccountBalance,getName,replenishAccount,withdrawFromAccount"/>
+
+            <att name="width" value="124"/>
+            <att name="height" value="144"/>
+        </node>
+        <node id="ATMEncoder" label="ATMEncoder&#xa;⎯⎯⎯&#xa;default" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="153.0" y="10.0" h="78" w="104" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="default"/>
+
+            <att name="width" value="94"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="json.JSONEncoder" label="json.JSONEncoder" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="125.0" y="84.0" h="36" w="154" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="144"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="ATMController" label="ATMController&#xa;⎯⎯⎯&#xa;atm&#xa;view&#xa;⎯⎯⎯&#xa;__init__&#xa;getBalance&#xa;isCardInserted&#xa;login&#xa;loginGuard&#xa;logout&#xa;phoneTopup&#xa;requires_auth&#xa;startUI&#xa;withdraw&#xa;withdrawConfirmation&#xa;wrapper_func" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="801.0" y="11.0" h="230" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="atm,view"/>
+            <att name="meths" value="__init__,getBalance,isCardInserted,login,loginGuard,logout,phoneTopup,requires_auth,startUI,withdraw,withdrawConfirmation,wrapper_func"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="194"/>
+        </node>
+        <node id="GUIView" label="GUIView&#xa;⎯⎯⎯&#xa;app&#xa;surf&#xa;⎯⎯⎯&#xa;__init__&#xa;atm&#xa;authenticate&#xa;enterPin&#xa;inputTopupAmount&#xa;login&#xa;logout&#xa;mainMenu&#xa;makePayment&#xa;phone_topup&#xa;show_available_cards&#xa;show_balance&#xa;withdraw&#xa;withdrawConfirmation&#xa;withdrawSummary" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="429.0" y="30.0" h="260" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="app,surf"/>
+            <att name="meths" value="__init__,atm,authenticate,enterPin,inputTopupAmount,login,logout,mainMenu,makePayment,phone_topup,show_available_cards,show_balance,withdraw,withdrawConfirmation,withdrawSummary"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="224"/>
+        </node>
+        <node id="CLIView" label="CLIView&#xa;⎯⎯⎯&#xa;__init__&#xa;atm&#xa;enterPin&#xa;login&#xa;logout&#xa;phone_topup&#xa;show_available_cards&#xa;show_balance&#xa;withdraw&#xa;withdrawConfirmation&#xa;withdrawSummary" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="621.0" y="216.0" h="178" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__,atm,enterPin,login,logout,phone_topup,show_available_cards,show_balance,withdraw,withdrawConfirmation,withdrawSummary"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="IView" label="IView&#xa;⎯⎯⎯&#xa;controller&#xa;⎯⎯⎯&#xa;__init__&#xa;login&#xa;logout&#xa;phone_topup&#xa;show_available_cards&#xa;show_balance&#xa;withdraw" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="621.0" y="62.0" h="170" w="140" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="controller"/>
+            <att name="meths" value="__init__,login,logout,phone_topup,show_available_cards,show_balance,withdraw"/>
+
+            <att name="width" value="130"/>
+            <att name="height" value="134"/>
+        </node>
+        <node id="MyApp" label="MyApp&#xa;⎯⎯⎯&#xa;rootwidget&#xa;⎯⎯⎯&#xa;__init__&#xa;build" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="324.0" y="95.0" h="120" w="80" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="rootwidget"/>
+            <att name="meths" value="__init__,build"/>
+
+            <att name="width" value="70"/>
+            <att name="height" value="84"/>
+        </node>
+        <node id="ErrorPopup" label="ErrorPopup&#xa;⎯⎯⎯&#xa;__init__" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="220.0" y="331.0" h="78" w="104" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value="__init__"/>
+
+            <att name="width" value="94"/>
+            <att name="height" value="54"/>
+        </node>
+        <node id="WithdrawConfirmationDialog" label="WithdrawConfirmationDialog&#xa;⎯⎯⎯&#xa;amount&#xa;withdrawFunction&#xa;⎯⎯⎯&#xa;__init__&#xa;submit" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="155.0" y="452.0" h="130" w="238" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="amount,withdrawFunction"/>
+            <att name="meths" value="__init__,submit"/>
+
+            <att name="width" value="228"/>
+            <att name="height" value="94"/>
+        </node>
+        <node id="Keyboard" label="Keyboard&#xa;⎯⎯⎯&#xa;cancel&#xa;grid&#xa;label&#xa;name&#xa;proceed&#xa;⎯⎯⎯&#xa;__init__&#xa;inputInfo&#xa;insertSymbol&#xa;removeAllSymbol&#xa;removeSymbol" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="562.0" y="391.0" h="190" w="110" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value="cancel,grid,label,name,proceed"/>
+            <att name="meths" value="__init__,inputInfo,insertSymbol,removeAllSymbol,removeSymbol"/>
+
+            <att name="width" value="100"/>
+            <att name="height" value="154"/>
+        </node>
+        <node id="MDDialog" label="MDDialog" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="229.0" y="405.0" h="36" w="87" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="77"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="MDBoxLayout" label="MDBoxLayout" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="445.0" y="286.0" h="36" w="112" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="102"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="MDApp" label="MDApp" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="248.0" y="126.0" h="36" w="62" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="52"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="MDGridLayout" label="MDGridLayout" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="406.0" y="440.0" h="36" w="121" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="111"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="MDLabel" label="MDLabel" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="426.0" y="478.0" h="36" w="79" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="69"/>
+            <att name="height" value="24"/>
+        </node>
+        <node id="ABC" label="ABC" weight="0">
+            <graphics type="ROUND_RECTANGLE" x="667.0" y="23.0" h="36" w="45" fill="#91CFEB" >
+                <att name="NODE_LABEL_POSITION" value="C,C,l,0.00,0.00" type="string" cy:type="String"/>
+                <att name="NODE_LABEL_FONT_SIZE" value="10" type="string" cy:type="String"/>
+            </graphics>
+            <att name="attrs" value=""/>
+            <att name="meths" value=""/>
+
+            <att name="width" value="35"/>
+            <att name="height" value="24"/>
+        </node>
+
+        <edge source="NotEnoughFundsException" target="Exception" type="last" weight="0" label="Edge from NotEnoughFundsException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BankIsUnsupportedException" target="Exception" type="last" weight="0" label="Edge from BankIsUnsupportedException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="CardNotFoundException" target="Exception" type="last" weight="0" label="Edge from CardNotFoundException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="CardAlreadyInsertedException" target="Exception" type="last" weight="0" label="Edge from CardAlreadyInsertedException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BankAccountNotFoundException" target="Exception" type="last" weight="0" label="Edge from BankAccountNotFoundException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="IncorrectPINException" target="Exception" type="last" weight="0" label="Edge from IncorrectPINException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="AuthenticationRequiredException" target="Exception" type="last" weight="0" label="Edge from AuthenticationRequiredException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="InvalidPINException" target="Exception" type="last" weight="0" label="Edge from InvalidPINException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="IncorrectAmountValueException" target="Exception" type="last" weight="0" label="Edge from IncorrectAmountValueException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="CardIsLockedException" target="Exception" type="last" weight="0" label="Edge from CardIsLockedException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="ReadError" target="Exception" type="last" weight="0" label="Edge from ReadError to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BanknoteTypes" target="enum.IntEnum" type="last" weight="0" label="Edge from BanknoteTypes to enum.IntEnum">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="IncorrectPhoneNumberException" target="Exception" type="last" weight="0" label="Edge from IncorrectPhoneNumberException to Exception">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="CashVault" target="ATM" type="last" weight="0" label="Edge from CashVault to ATM">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BanknoteTypes" target="CashVault" type="last" weight="0" label="Edge from BanknoteTypes to CashVault">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="ATMEncoder" target="json.JSONEncoder" type="last" weight="0" label="Edge from ATMEncoder to json.JSONEncoder">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="ATM" target="ATMController" type="last" weight="0" label="Edge from ATM to ATMController">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="CLIView" target="IView" type="last" weight="0" label="Edge from CLIView to IView">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="GUIView" target="IView" type="last" weight="0" label="Edge from GUIView to IView">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="ErrorPopup" target="MDDialog" type="last" weight="0" label="Edge from ErrorPopup to MDDialog">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="WithdrawConfirmationDialog" target="MDDialog" type="last" weight="0" label="Edge from WithdrawConfirmationDialog to MDDialog">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Keyboard" target="MDBoxLayout" type="last" weight="0" label="Edge from Keyboard to MDBoxLayout">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="MyApp" target="MDApp" type="last" weight="0" label="Edge from MyApp to MDApp">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="MyApp" target="GUIView" type="last" weight="0" label="Edge from MyApp to GUIView">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="MDGridLayout" target="Keyboard" type="last" weight="0" label="Edge from MDGridLayout to Keyboard">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="MDLabel" target="Keyboard" type="last" weight="0" label="Edge from MDLabel to Keyboard">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="MDBoxLayout" target="GUIView" type="last" weight="0" label="Edge from MDBoxLayout to GUIView">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="IView" target="ABC" type="last" weight="0" label="Edge from IView to ABC">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="NONE" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DELTA" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="BankAccount" target="Bank" type="last" weight="0" label="Edge from BankAccount to Bank">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="IView" target="ATMController" type="last" weight="0" label="Edge from IView to ATMController">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+        <edge source="Card" target="BankAccount" type="last" weight="0" label="Edge from Card to BankAccount">
+            <graphics width="2.0" fill="#848484">
+                <att name="EDGE_LINE_TYPE" value="SOLID" type="string" cy:type="String"/>
+                <att name="EDGE_SOURCE_ARROW_SHAPE" value="ARROW" type="string" cy:type="String"/>
+                <att name="EDGE_TARGET_ARROW_SHAPE" value="OPEN_DIAMOND" type="string" cy:type="String"/>
+            </graphics>
+        </edge>
+    </graph>        

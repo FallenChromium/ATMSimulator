@@ -1,0 +1,44 @@
+@startuml
+[*] --> FilesLoaded
+FilesLoaded --> [*]: Incorrect data
+FilesLoaded --> WaitingForCard: card is not inserted
+FilesLoaded --> Authenticated: card in place
+
+WaitingForCard: choose a card
+WaitingForCard --> [*]: cancel
+WaitingForCard --> Authenticate: provide PIN
+Authenticate: enter PIN
+Authenticate --> Authenticate: pin is incorrect
+Authenticate --> CardLocked: card locked
+Authenticate --> Authenticated: card is unlocked
+Authenticate --> [*]: PIN canceled
+CardLocked: show a troll message
+CardLocked --> [*]
+
+Authenticated: user can choose one of the following
+Authenticated --> PhoneRefill
+Authenticated --> Withdrawal
+Authenticated --> ShowBalance
+Authenticated --> Logout
+
+PhoneRefill: enter phone number
+PhoneRefill --> PhoneRefill: incorrect phone number
+PhoneRefill --> PhoneRefillSum: correct number
+PhoneRefillSum --> PhoneRefillSum: insufficent balance
+PhoneRefillSum --> Authenticated: success
+
+ShowBalance -> Authenticated
+
+Withdrawal: enter sum to withdraw
+Withdrawal --> Withdrawal: insufficent balance
+Withdrawal --> Withdrawal: unable to provide sum in cash
+Withdrawal --> Authenticated: withdraw from balance, provide cash
+
+Withdrawal --> Authenticated: "back" is chosen
+PhoneRefill --> Authenticated: "back" is chosen
+
+Authenticated --> [*]: exit is chosen
+Logout --> [*]
+
+
+@enduml
