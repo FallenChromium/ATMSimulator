@@ -6,7 +6,7 @@ import settings
 
 
 class CashVault:
-    def __init__(self, availableBanknotes: dict[int, int] = dict.fromkeys(BanknoteTypes, 0)):
+    def __init__(self, availableBanknotes: "dict[int, int]" = dict.fromkeys(BanknoteTypes, 0)):
         self._availableBanknotes = availableBanknotes
 
     def __serialize__(self):
@@ -70,7 +70,7 @@ class ATM:
         return self._accountId
 
     # call this only after verifying that the money is successfully subtracted from the account!
-    def withdraw(self, amount: float) -> list[str]:
+    def withdraw(self, amount: float) -> "list[str]":
         can_give = 0
         cash = []
             #for each banknote nominal, starting from the biggest

@@ -3,19 +3,19 @@ from resources import AuthenticationRequiredException, CardAlreadyInsertedExcept
 import settings
 from utilities import validateAmount, validatePIN, validatePhone
 
+# a decorator for things which can only be called if you're authenticated
+# adds accountId as the last argument to the function
+# static method because python's syntactic sugar doesn't imply that you pass self to the decorator
+def requires_auth(function):
+    def wrapper_func(*args):
+        # args[0] here is the "self" in the called function
+        if args[0].atm.isCardInserted():
+            return function(*args, lambda self=args[0]: self.atm.getAccountId())
+        else: raise(AuthenticationRequiredException)
+    return wrapper_func
 class ATMController:
 
-    # a decorator for things which can only be called if you're authenticated
-    # adds accountId as the last argument to the function
-    # static method because python's syntactic sugar doesn't imply that you pass self to the decorator
-    @staticmethod
-    def requires_auth(function):
-        def wrapper_func(*args):
-            # args[0] here is the "self" in the called function
-            if args[0].atm.isCardInserted():
-                return function(*args, lambda self=args[0]: self.atm.getAccountId())
-            else: raise(AuthenticationRequiredException)
-        return wrapper_func
+
 
     def __init__(self, ATM: ATM):
         self.atm = ATM
@@ -71,7 +71,7 @@ class ATMController:
         else: self.view.withdrawConfirmation("You are about to withdraw: " + str(amount) + ". Do you want to continue?", amount)
 
     @requires_auth
-    def withdraw(self, amount: float, accountId) -> list[str]:
+    def withdraw(self, amount: float, accountId) -> "list[str]":
             self.atm.getBank().withdrawFromAccount(accountId(), amount)
             cash = self.atm.withdraw(amount)
             return(cash)

@@ -79,12 +79,11 @@ class Card:
 
 class Bank:
     name: str
-    # Uses bankAccountId as key (emulates database indexing behavior)
-    __accounts: dict[str, BankAccount]
 
-    def __init__(self, name, accounts: list[BankAccount]):
+    def __init__(self, name, accounts: "list[BankAccount]"):
         self.name = name
-        self.__accounts = {account.getId(): account for account in accounts}
+        # Uses bankAccountId as key (emulates database indexing behavior)
+        self.__accounts: dict[str, BankAccount] = {account.getId(): account for account in accounts}
 
     def __serialize__(self):
         return {"name": self.name, "accounts": list(self.__accounts.values())}
