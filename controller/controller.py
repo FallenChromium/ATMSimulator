@@ -27,7 +27,7 @@ class ATMController:
         if variation == "cli":
             from view.CLIView import CLIView
             self.view = CLIView(self)
-        self.view.atm()
+        self.view.start_atm()
 
     def logout(self):
         self.atm.logout()

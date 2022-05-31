@@ -1,4 +1,3 @@
-from time import sleep
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.gridlayout import MDGridLayout
@@ -69,10 +68,10 @@ class GUIView(IView):
             self.mainMenu(None)
         else:
             self.surf.add_widget(MDLabel())
-            self.surf.add_widget(MDFlatButton(text='Insert a card', on_press=self.show_available_cards))
+            self.surf.add_widget(MDFlatButton(text='Insert a card', on_press=self.cards))
             self.surf.add_widget(MDLabel())
 
-    def atm(self):
+    def start_atm(self):
         self.app.run()
 
 
@@ -83,7 +82,7 @@ class GUIView(IView):
         self.surf.add_widget(MDLabel(text='Have a good day!'))
         quit()
 
-    def show_available_cards(self, button):
+    def cards(self, button):
         self.surf.clear_widgets()
         for idx, card in enumerate(settings.cards):
             self.surf.add_widget(MDFlatButton(text=card._cardNumber, on_press=lambda _, x=idx: self.login(x)))

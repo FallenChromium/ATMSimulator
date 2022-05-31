@@ -9,13 +9,17 @@ class IView(ABC):
     @abstractmethod
     def logout(self):
         pass
+    
+    @abstractmethod
+    def start_atm(self):
+        pass
 
     @abstractmethod
     def login(self):
         pass
 
     @abstractmethod
-    def show_available_cards(self, cards):
+    def cards(self, cards):
         pass
 
     @abstractmethod

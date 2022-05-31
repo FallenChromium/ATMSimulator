@@ -7,49 +7,45 @@ from rich.console import Console
 from rich.table import Table
 from rich.prompt import Prompt
 # CLI arguments parsing
-import click
+import typer
 
 class CLIView(IView):
     def __init__(self, controller):
-        # an awful workaround for Click's inability to use object's methods as commands
-        # Set cli_controller global variable and use it rather than self.controller which is the default behavior for views
         super().__init__(controller)
-        global cli_controller
-        cli_controller = controller
+        self.cli_controller = controller
+        self.app = typer.Typer()
 
-    @click.group()
-    @staticmethod
-    def atm():
-        pass
+        self.register_command(self.logout)
+        self.register_command(self.login)
+        self.register_command(self.cards)
+        self.register_command(self.show_balance)
+        self.register_command(self.phone_topup)
+        self.register_command(self.withdraw)
 
-    @atm.command('logout')
-    @staticmethod
-    def logout():
-        cli_controller.logout()
+    def start_atm(self):
+        self.app()
 
-    @atm.command('insert')
-    @click.argument('card', type=click.INT)
-    @staticmethod
+    def logout(self):
+        self.cli_controller.logout()
+
     # there should be proper error handling, but it kinda doesn't matter in the CLI app, does it?
-    def login(card):
+    def login(self, card: int):
         try:
-            cli_controller.loginGuard(card)
+            self.cli_controller.loginGuard(card)
         except CardAlreadyInsertedException as e:
             print(e)
         except CardNotFoundException as e:
             print(e)
         else:
             try:
-                cli_controller.login(card, CLIView.enterPin())
+                self.cli_controller.login(card, CLIView.enterPin())
             except CardIsLockedException as e:
                 print(e)
                 quit()
             except IncorrectPINException as e:
                 print(e)
 
-    @atm.command('cards')
-    @staticmethod
-    def show_available_cards():
+    def cards(self):
         console = Console()
         table = Table(show_header=True, header_style="bold cyan")
         table.add_column("Index", style="dim")
@@ -76,44 +72,36 @@ class CLIView(IView):
             
             return pin
 
-    @atm.command('show_balance')
-    @staticmethod
-    def show_balance():
+    def show_balance(self):
         try:
-            print(cli_controller.getBalance())
+            print(self.cli_controller.getBalance())
         except AuthenticationRequiredException as error:
             print(error)
 
-    @atm.command('withdraw')
-    @click.argument('amount')
-    @staticmethod
-    def withdraw(amount):
+    def withdraw(self, amount: float):
         try:
-            cli_controller.withdrawConfirmation(amount)            
+            self.cli_controller.withdrawConfirmation(amount)            
         except NotEnoughFundsException as error:
             print(error)
         except AuthenticationRequiredException as error:
             print(error)
 
-    @staticmethod
-    def withdrawSummary(amount):
-        cash = cli_controller.withdraw(amount)
+    def withdrawSummary(self, amount):
+        cash = self.cli_controller.withdraw(amount)
         for banknote in cash:
             print(banknote)
     
     def withdrawConfirmation(self, dialog_text: str, amount: float):
-        if click.confirm(dialog_text):
-            CLIView.withdrawSummary(amount)
+        if typer.confirm(dialog_text):
+            self.withdrawSummary(amount)
 
 
+    def register_command(self, func):
+        self.app.command()(func)
 
-    @atm.command('phone_topup')
-    @click.argument('phone')
-    @click.argument('amount')
-    @staticmethod
-    def phone_topup(phone, amount):
+    def phone_topup(self, phone: str, amount: str):
         try:
-            cli_controller.phoneTopup(phone, float(amount))
+            self.cli_controller.phoneTopup(phone, float(amount))
         except IncorrectPhoneNumberException as error:
             print(error)
         except IncorrectAmountValueException as error:
